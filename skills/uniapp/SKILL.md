@@ -96,7 +96,7 @@ const res = await uni.request({ url: 'https://api.example.com' })
 3. Test on all target platforms
 4. Use rpx for responsive layouts
 5. Handle platform differences in manifest.json
-6. must use uni-helper tools
+
 
 
 ### MCP扩展
