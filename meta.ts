@@ -11,7 +11,7 @@ export const submodules = {
   // Planned (not yet cloned):
   // nestjs: 'https://github.com/nestjs/docs.nestjs.com',
   // vite: 'https://github.com/vitejs/vite',
-  // unocss: 'https://github.com/unocss/unocss',
+  // UnoCSS skill is synced from vendor/antfu-skills (antfu/skills), not generated here.
 }
 
 /**
@@ -27,6 +27,12 @@ export const vendors: Record<string, VendorSkillMeta> = {
       'vue-pinia-best-practices': 'vue-pinia-best-practices',
       'vue-router-best-practices': 'vue-router-best-practices',
       'vue-testing-best-practices': 'vue-testing-best-practices',
+    },
+  },
+  'antfu-skills': {
+    source: 'https://github.com/antfu/skills',
+    skills: {
+      unocss: 'unocss',
     },
   },
   // Planned:

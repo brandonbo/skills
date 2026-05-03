@@ -14,6 +14,20 @@ sources:
       commit.
     skills:
       - vue
+  - id: antfu-skills-unocss
+    repository: https://github.com/antfu/skills
+    path: skills/unocss
+    submodule_path: vendor/antfu-skills
+    commit: 50deaeb269d80d92db7a2c5a677290309ae307fc
+    license: MIT
+    imported_on: 2026-05-04
+    import_type: direct_copy
+    notes: >
+      Imported the upstream skills/unocss directory. The upstream MIT LICENSE.md is
+      copied into skills/unocss/LICENSE, with a NOTICE.md and SYNC.md documenting
+      source and commit.
+    skills:
+      - unocss
   - id: vuejs-ai-skills
     repository: https://github.com/vuejs-ai/skills
     submodule_path: vendor/vuejs-ai-skills

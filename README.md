@@ -47,6 +47,7 @@ Each skill is licensed independently. See `skills/<skill-name>/LICENSE`.
 | `vue-pinia-best-practices` | vuejs-ai/skills |
 | `vue-router-best-practices` | vuejs-ai/skills |
 | `vue-testing-best-practices` | vuejs-ai/skills |
+| `unocss` | antfu/skills |
 
 ### Hand-written (Type 3)
 
