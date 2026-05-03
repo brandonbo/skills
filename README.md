@@ -7,7 +7,7 @@ Personal agent skills collection.
 Install all published skills:
 
 ```bash
-npx skills add dongbo/skills --skill '*'
+npx skills add brandonbo/skills --skill '*'
 ```
 
 Install from a local checkout while developing:
