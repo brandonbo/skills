@@ -1,0 +1,9 @@
+[submodule "sources/vue"]
+	path = sources/vue
+	url = https://github.com/vuejs/docs
+[submodule "vendor/vuejs-ai-skills"]
+	path = vendor/vuejs-ai-skills
+	url = https://github.com/vuejs-ai/skills
+[submodule "vendor/antfu-skills"]
+	path = vendor/antfu-skills
+	url = https://github.com/antfu/skills

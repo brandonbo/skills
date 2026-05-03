@@ -1,0 +1,34 @@
+sources:
+  - id: antfu-skills-vue
+    repository: https://github.com/antfu/skills
+    path: skills/vue
+    submodule_path: vendor/antfu-skills
+    generated_from_submodule_path: sources/vue
+    commit: 50deaeb269d80d92db7a2c5a677290309ae307fc
+    license: MIT
+    imported_on: 2026-05-03
+    import_type: direct_copy
+    notes: >
+      Imported the upstream skills/vue directory. The upstream MIT LICENSE.md is
+      copied into skills/vue/LICENSE, with a NOTICE.md documenting source and
+      commit.
+    skills:
+      - vue
+  - id: vuejs-ai-skills
+    repository: https://github.com/vuejs-ai/skills
+    submodule_path: vendor/vuejs-ai-skills
+    commit: c9d355ff23f654309dd02006be671859df0a134c
+    license: MIT
+    imported_on: 2026-05-03
+    import_type: direct_copy
+    notes: >
+      Imported the upstream skills/ directory. The upstream MIT LICENSE is
+      copied into each imported skill directory, with a NOTICE.md documenting
+      source and commit.
+    skills:
+      - create-adaptable-composable
+      - vue-best-practices
+      - vue-debug-guides
+      - vue-pinia-best-practices
+      - vue-router-best-practices
+      - vue-testing-best-practices
