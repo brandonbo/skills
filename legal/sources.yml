@@ -32,3 +32,17 @@ sources:
       - vue-pinia-best-practices
       - vue-router-best-practices
       - vue-testing-best-practices
+  - id: uni-helper-uniapp
+    repository: https://github.com/uni-helper/skills
+    path: skills/uniapp
+    commit: 91423a240a5b0714fc5e7e13bd3f93a79b8cc8d7
+    license: MIT
+    imported_on: 2026-05-03
+    import_type: fork
+    notes: >
+      Forked from uni-helper/skills uniapp skill. Originally generated from
+      https://gitcode.com/dcloud/unidocs-zh. Now maintained independently
+      with local modifications. The upstream MIT LICENSE is kept as LICENSE,
+      with a NOTICE.md documenting provenance.
+    skills:
+      - uniapp

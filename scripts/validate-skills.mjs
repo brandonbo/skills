@@ -5,6 +5,7 @@ const root = process.cwd()
 const skillsDir = join(root, 'skills')
 const namePattern = /^[a-z0-9][a-z0-9-]*$/
 const errors = []
+const warnings = []
 
 if (!existsSync(skillsDir)) {
   errors.push('Missing skills/ directory')
@@ -18,6 +19,8 @@ if (!existsSync(skillsDir)) {
     const skillPath = join(skillDir, 'SKILL.md')
     const licensePath = join(skillDir, 'LICENSE')
     const noticePath = join(skillDir, 'NOTICE.md')
+    const generationPath = join(skillDir, 'GENERATION.md')
+    const syncPath = join(skillDir, 'SYNC.md')
 
     if (!namePattern.test(dirName)) {
       errors.push(`${dirName}: directory name must use lowercase letters, digits, and hyphens`)
@@ -34,6 +37,29 @@ if (!existsSync(skillsDir)) {
 
     if (!existsSync(noticePath)) {
       errors.push(`${dirName}: missing NOTICE.md`)
+    }
+
+    const hasGeneration = existsSync(generationPath)
+    const hasSync = existsSync(syncPath)
+
+    if (hasGeneration && hasSync) {
+      errors.push(`${dirName}: has both GENERATION.md and SYNC.md (should have at most one)`)
+    }
+
+    const skillType = hasGeneration ? 'generated' : hasSync ? 'synced' : 'manual'
+
+    if (hasGeneration) {
+      const genContent = readFileSync(generationPath, 'utf8')
+      if (!genContent.includes('Git SHA:')) {
+        warnings.push(`${dirName}: GENERATION.md missing Git SHA`)
+      }
+    }
+
+    if (hasSync) {
+      const syncContent = readFileSync(syncPath, 'utf8')
+      if (!syncContent.includes('Git SHA:')) {
+        warnings.push(`${dirName}: SYNC.md missing Git SHA`)
+      }
     }
 
     const content = readFileSync(skillPath, 'utf8')
@@ -56,16 +82,24 @@ if (!existsSync(skillsDir)) {
     if (!description) {
       errors.push(`${dirName}: frontmatter missing description`)
     }
+
+    console.log(`  ${dirName} [${skillType}] ✓`)
+  }
+}
+
+if (warnings.length > 0) {
+  console.warn('\nWarnings:')
+  for (const warning of warnings) {
+    console.warn(`  ⚠ ${warning}`)
   }
 }
 
 if (errors.length > 0) {
-  console.error('Skill validation failed:')
+  console.error('\nSkill validation failed:')
   for (const error of errors) {
-    console.error(`- ${error}`)
+    console.error(`  ✗ ${error}`)
   }
   process.exit(1)
 }
 
-console.log('Skill validation passed')
-
+console.log('\nSkill validation passed')
